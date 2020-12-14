@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../entity/product';
 
 
@@ -9,12 +9,15 @@ import { Product } from '../entity/product';
 })
 export class CatalogComponent implements OnInit {
 
-  @Input()
-  public data: Product[]= [];
+  public data: Product[]= Product.ALL;
 
   public currentCategory:string = "";
 
   constructor() { }
+
+  public notifyMe(product:Product){
+    alert(product.name);
+  }
 
   ngOnInit(): void {
   }

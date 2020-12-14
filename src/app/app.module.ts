@@ -10,6 +10,7 @@ import { RandomStagiaireComponent } from './random-stagiaire/random-stagiaire.co
 import { CategoryListPipe } from './category-list.pipe';
 import { ProductThumbComponent } from './product-thumb/product-thumb.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     RandomStagiaireComponent,
     CategoryListPipe,
     ProductThumbComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

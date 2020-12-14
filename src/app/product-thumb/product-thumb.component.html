@@ -1,4 +1,6 @@
 <div *ngIf="data !== null">
     <h2>{{data.name}}</h2>
     <img src={{data.img}} alt={{data.name}}>
+    <a routerLink="/details/{{data.id}}">Voir le détail</a>
+    <button (click)="addToCart()">Ajouter au panier !</button>
 </div>
