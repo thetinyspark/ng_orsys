@@ -1,0 +1,25 @@
+
+<select [(ngModel)]="currentCategory">
+    <option value={{obj.value}} *ngFor="let obj of data|categoryList">
+        {{obj.label}}
+    </option>
+</select>
+<br />
+
+<div *ngIf="data.length > 0">
+    <app-product-thumb *ngFor="let current of data|category:currentCategory" 
+                        [data]="current" >
+    </app-product-thumb>
+</div>
+
+<div *ngIf="data.length > 0">
+    <app-product-details *ngFor="let current of data|category:currentCategory" 
+                        [data]="current" >
+    </app-product-details>
+</div>
+
+
+
+<div *ngIf="data.length === 0">
+    <p>Le catalogue est vide</p>
+</div>
