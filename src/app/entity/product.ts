@@ -5,6 +5,8 @@ export class Product {
     public category:string      = "";
     public img:string           = "";
 
+    public static CART:Product[] = [];
+
     public static ALL:Product[] = [
         {
           id: 1,

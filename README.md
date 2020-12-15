@@ -1,5 +1,3 @@
-# TP
-
-
-- Afficher le détail d'un produit lorsqu'on clique sur le 
-lien "Voir le détail" de nos ProductThumbComponent.
+- Ajouter un bouton "ajouter au panier" dans le composant
+ProductDetailsComponent.
+- Au click sur le bouton, le produit est ajouté. 

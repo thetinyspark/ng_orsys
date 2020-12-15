@@ -1,0 +1,14 @@
+<div *ngIf="products.length > 0">
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Aperçu</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let current of products">
+            <td>{{current.name}}</td>
+            <td><img src={{current.img}} alt={{current.name}}></td>
+            <td><button (click)="removeProduct(current)">X</button></td>
+        </tr>
+    </table>
+</div>
