@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
@@ -11,8 +12,10 @@ import { User } from './entity/user';
 export class UserService {
 
   private connected:boolean = false;
+  private fromUrl:string = ""; 
+  private deniedUrl:string = "";
 
-  constructor(private client:HttpClient) { }
+  constructor(private client:HttpClient, private router:Router) { }
 
   public getUser():Observable<User>{
     return this.client.get<User>(environment.userUrl).pipe( 
@@ -28,7 +31,11 @@ export class UserService {
     );
   }
 
-  public login(username:string, password:string):Observable<boolean>{
+  public login(
+    username:string, 
+    password:string, 
+    redirect:boolean = false
+  ):Observable<boolean>{
     if( username === "admin" && password === "123456"){
       this.connected = true;
     }
@@ -36,8 +43,25 @@ export class UserService {
       this.connected = false;
     }
 
-    return of(this.connected);
+    return of(this.connected).pipe( 
+      map( 
+        (connected:boolean) => {
+          if( connected && redirect ){
+            this.router.navigate([this.fromUrl]);
+          }
+          return connected;
+        }
+      )
+    );
   }
+
+  public prompt(fromUrl:string, deniedUrl:string){
+    this.fromUrl = fromUrl; 
+    this.deniedUrl = deniedUrl;
+    this.router.navigate(["/login"]);
+  }
+
+
 
   public isConnected():Observable<boolean>{
   

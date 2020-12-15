@@ -18,7 +18,7 @@ export class IsUserConnectedGuard implements CanActivate {
       map(
         (connected:boolean)=>{
           if( connected === false ){
-            this.router.navigate(["/login"]);
+            this.userService.prompt(this.router.url, state.url);
           }
           return connected;
         }

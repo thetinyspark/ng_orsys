@@ -14,9 +14,9 @@ export class LoginComponent implements OnInit {
   constructor(private userService:UserService) { }
 
   public onLogin(){
-    this.userService.login(this.username, this.password).subscribe(
+    this.userService.login(this.username, this.password, true).subscribe(
       (connected:boolean)=>{
-        alert(connected);
+        console.log(connected);
       }
     );
   }

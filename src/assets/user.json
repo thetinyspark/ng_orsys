@@ -3,5 +3,5 @@
     "age": 34,
     "address": "9 allée de la boustifaille",
     "sex": "M",
-    "connected": false
+    "connected": true
 }
