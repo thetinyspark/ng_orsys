@@ -1,1 +1,24 @@
-<p>payment-form works!</p>
+<form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+
+    <label for="firstname">Prenom:</label>
+    <input type="text" name="firstname" formControlName="firstname" />
+    <br />
+
+    <label for="lastname">Nom:</label>
+    <input type="text" name="lastname" formControlName="lastname" />
+    <br />
+
+    <label for="shipping_address">Adresse de Livraison:</label>
+    <input type="text" name="shipping_address" formControlName="ship" />
+    <br />
+
+    <label for="billing_address">Adresse de Facturation:</label>
+    <input type="text" name="billing_address" formControlName="bill" />
+    <br />
+
+    <label for="phone">N° Portable:</label>
+    <input type="text" name="phone" formControlName="phone" [pattern]="phonePattern" />
+    <br />
+
+    <button type="submit" [disabled]="!paymentForm.valid">Valider</button>
+</form>

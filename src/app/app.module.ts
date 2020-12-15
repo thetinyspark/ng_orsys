@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { CategoryPipe } from './category.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RandomStagiaireComponent } from './random-stagiaire/random-stagiaire.component';
 import { CategoryListPipe } from './category-list.pipe';
 import { ProductThumbComponent } from './product-thumb/product-thumb.component';
@@ -17,6 +17,7 @@ import { AccountComponent } from './account/account.component';
 import { CommandCycleComponent } from './command-cycle/command-cycle.component';
 import { PaymentFormComponent } from './payment-form/payment-form.component';
 import { LoginComponent } from './login/login.component';
+import { RecapPaymentComponent } from './recap-payment/recap-payment.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +33,14 @@ import { LoginComponent } from './login/login.component';
     AccountComponent,
     CommandCycleComponent,
     PaymentFormComponent,
-    LoginComponent
+    LoginComponent,
+    RecapPaymentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    FormsModule, 
+    FormsModule,  
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

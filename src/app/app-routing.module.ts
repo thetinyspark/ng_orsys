@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { PaymentFormComponent } from './payment-form/payment-form.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { RandomStagiaireComponent } from './random-stagiaire/random-stagiaire.component';
+import { RecapPaymentComponent } from './recap-payment/recap-payment.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,14 @@ const routes: Routes = [
       {
         path: "form", 
         component: PaymentFormComponent
+      }, 
+      {
+        path: "recap", 
+        component: RecapPaymentComponent
+      }, 
+      {
+        path: "", 
+        component: RecapPaymentComponent
       }
     ]
   },      

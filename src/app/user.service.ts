@@ -24,6 +24,11 @@ export class UserService {
           // on triche en faisant en sorte que notre utilisateur ait toujours 
           // sa propriété connected égale à celle stockée sur notre instance 
           // de UserService
+
+          // si dans notre .json connected = true, pas besoin de tricher 
+          if( user.connected){
+            this.connected = true;
+          }
           user.connected = this.connected;
           return user;
         }
