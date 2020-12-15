@@ -26,7 +26,15 @@ export class CatalogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.data = this.catalogService.getAll();
+    // ici on est dans la méthode ngOnInit de notre composant, on n'a pas besoin de renvoyer une donnée
+    // on peut se contenter de l'exploiter directement. Pour ça on utilise la méthode subscribe
+    // qui va avoir pour effet de déclencher toute la mécanique de chargement des données. 
+    // On récupère ces données puis on les assigne à nos propriétés. 
+    this.catalogService.getAll().subscribe( 
+      (products:Product[]) => {
+        this.data = products;
+      }
+    );
   }
 
 }

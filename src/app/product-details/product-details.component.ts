@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { CartService } from '../cart.service';
+import { CatalogService } from '../catalog.service';
 import { Product } from '../entity/product';
 
 @Component({
@@ -10,19 +12,26 @@ import { Product } from '../entity/product';
 export class ProductDetailsComponent implements OnInit {
 
   public data:Product | null = null;
-  constructor(private route:ActivatedRoute) { }
+  constructor(
+    private route:ActivatedRoute, 
+    private cartService:CartService, 
+    private catalogService:CatalogService
+  ) { }
+
+  public onAddToCart(){
+    if( this.data !== null )
+      this.cartService.add(this.data);
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe( 
       (map:ParamMap) => {
-        const all:Product[] = Product.ALL;
         const id:string = map.get("id") || "-1";
-        for (let i:number = 0; i < all.length; i++ ){
-          const current:Product = all[i];
-          if( current.id === parseInt(id)){
-            this.data = current;
+        this.catalogService.getById(parseInt( id )).subscribe( 
+          (product:Product | null) => {
+            this.data = product;
           }
-        }
+        );
       }
     )
   }
