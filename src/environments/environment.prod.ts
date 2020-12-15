@@ -1,4 +1,5 @@
 export const environment = {
   production: true, 
-  catalogUrl: "/assets/catalog.json"
+  catalogUrl: "/assets/catalog.json", 
+  userUrl: "/assets/user.json"
 };

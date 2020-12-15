@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false, 
-  catalogUrl: "/assets/catalog.json"
+  catalogUrl: "/assets/catalog.json", 
+  userUrl: "/assets/user.json"
 };
 
 /*

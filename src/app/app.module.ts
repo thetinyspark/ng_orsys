@@ -13,6 +13,10 @@ import { ProductThumbComponent } from './product-thumb/product-thumb.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
+import { AccountComponent } from './account/account.component';
+import { CommandCycleComponent } from './command-cycle/command-cycle.component';
+import { PaymentFormComponent } from './payment-form/payment-form.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { CartComponent } from './cart/cart.component';
     ProductThumbComponent,
     ProductDetailsComponent,
     HomeComponent,
-    CartComponent
+    CartComponent,
+    AccountComponent,
+    CommandCycleComponent,
+    PaymentFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

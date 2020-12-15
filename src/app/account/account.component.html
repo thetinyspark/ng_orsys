@@ -1,0 +1,11 @@
+<div *ngIf="user !== null">
+    <div *ngIf="user.connected">
+        <h2>{{user.name}}</h2>
+        <p>{{user.address}}</p>
+        <p>{{user.age}}</p>
+        <p>{{user.sex}}</p>
+    </div>
+    <div *ngIf="!user.connected">
+        <p>Vous n'êtes pas connecté !</p>
+    </div>
+</div>
