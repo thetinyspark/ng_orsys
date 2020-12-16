@@ -16,6 +16,8 @@ import { CommandCycleComponent } from './command-cycle/command-cycle.component';
 import { PaymentFormComponent } from './payment-form/payment-form.component';
 import { LoginComponent } from './login/login.component';
 import { RecapPaymentComponent } from './recap-payment/recap-payment.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import { RecapPaymentComponent } from './recap-payment/recap-payment.component';
     AppRoutingModule, 
     FormsModule,  
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
