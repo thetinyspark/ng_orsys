@@ -10,6 +10,7 @@ import { PaymentFormComponent } from './payment-form/payment-form.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { RandomStagiaireComponent } from './random-stagiaire/random-stagiaire.component';
 import { RecapPaymentComponent } from './recap-payment/recap-payment.component';
+import { ShopModule } from './shop/shop.module';
 
 const routes: Routes = [
   {
@@ -66,7 +67,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes), ShopModule],
+  exports: [RouterModule, ShopModule]
 })
 export class AppRoutingModule { }

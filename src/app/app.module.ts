@@ -9,7 +9,6 @@ import { CategoryPipe } from './category.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RandomStagiaireComponent } from './random-stagiaire/random-stagiaire.component';
 import { CategoryListPipe } from './category-list.pipe';
-import { ProductThumbComponent } from './product-thumb/product-thumb.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 import { AccountComponent } from './account/account.component';
@@ -18,6 +17,7 @@ import { PaymentFormComponent } from './payment-form/payment-form.component';
 import { LoginComponent } from './login/login.component';
 import { RecapPaymentComponent } from './recap-payment/recap-payment.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +25,6 @@ import { RecapPaymentComponent } from './recap-payment/recap-payment.component';
     CategoryPipe,
     RandomStagiaireComponent,
     CategoryListPipe,
-    ProductThumbComponent,
     ProductDetailsComponent,
     CartComponent,
     AccountComponent,
