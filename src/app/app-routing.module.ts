@@ -4,7 +4,6 @@ import { AccountComponent } from './account/account.component';
 import { CartComponent } from './cart/cart.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { CommandCycleComponent } from './command-cycle/command-cycle.component';
-import { HomeComponent } from './home/home.component';
 import { IsUserConnectedGuard } from './is-user-connected.guard';
 import { LoginComponent } from './login/login.component';
 import { PaymentFormComponent } from './payment-form/payment-form.component';
@@ -54,7 +53,11 @@ const routes: Routes = [
   },
   {
     path: "home", 
-    component: HomeComponent
+    loadChildren: () => import('./home/home.module').then( 
+      (mod) => {
+        return mod.HomeModule
+      }
+    )
   },
   {
     path: "details/:id", 

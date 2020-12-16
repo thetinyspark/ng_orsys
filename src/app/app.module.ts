@@ -11,14 +11,12 @@ import { RandomStagiaireComponent } from './random-stagiaire/random-stagiaire.co
 import { CategoryListPipe } from './category-list.pipe';
 import { ProductThumbComponent } from './product-thumb/product-thumb.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
 import { AccountComponent } from './account/account.component';
 import { CommandCycleComponent } from './command-cycle/command-cycle.component';
 import { PaymentFormComponent } from './payment-form/payment-form.component';
 import { LoginComponent } from './login/login.component';
 import { RecapPaymentComponent } from './recap-payment/recap-payment.component';
-import { IsAdultValidator } from './IsAdultValidator';
 
 @NgModule({
   declarations: [
@@ -29,7 +27,6 @@ import { IsAdultValidator } from './IsAdultValidator';
     CategoryListPipe,
     ProductThumbComponent,
     ProductDetailsComponent,
-    HomeComponent,
     CartComponent,
     AccountComponent,
     CommandCycleComponent,

@@ -8,6 +8,10 @@ import { Product } from '../entity/product';
 })
 export class ProductThumbComponent implements OnInit {
 
+
+  @Input()
+  public displayButton:boolean = false;
+
   @Input()
   public data:Product | null = null;
 
