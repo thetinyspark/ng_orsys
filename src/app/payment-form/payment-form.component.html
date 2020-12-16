@@ -1,23 +1,37 @@
 <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
 
-    <label for="firstname">Prenom:</label>
+    <label for="firstname">Prenom*:</label>
     <input type="text" name="firstname" formControlName="firstname" />
+    <img src="/assets/valid.png" class="icon" [hidden]="!paymentForm.controls.firstname.valid" alt="" />
+    <img src="/assets/invalid.png" class="icon" [hidden]="paymentForm.controls.firstname.valid" alt="" />
     <br />
 
-    <label for="lastname">Nom:</label>
+    <label for="lastname">Nom*:</label>
     <input type="text" name="lastname" formControlName="lastname" />
+    <img src="/assets/valid.png" class="icon" [hidden]="!paymentForm.controls.lastname.valid" alt="" />
+    <img src="/assets/invalid.png" class="icon" [hidden]="paymentForm.controls.lastname.valid" alt="" />
     <br />
 
-    <label for="shipping_address">Adresse de Livraison:</label>
+    <label for="lastname">Age*:</label>
+    <input type="text" name="age" formControlName="age" />
+    <br />
+
+    <label for="shipping_address">Adresse de Livraison*:</label>
     <input type="text" name="shipping_address" formControlName="ship" />
+    <img src="/assets/valid.png" class="icon" [hidden]="!paymentForm.controls.ship.valid" alt="" />
+    <img src="/assets/invalid.png" class="icon" [hidden]="paymentForm.controls.ship.valid" alt="" />
     <br />
 
-    <label for="billing_address">Adresse de Facturation:</label>
+    <label for="billing_address">Adresse de Facturation*:</label>
     <input type="text" name="billing_address" formControlName="bill" />
+    <img src="/assets/valid.png" class="icon" [hidden]="!paymentForm.controls.bill.valid" alt="" />
+    <img src="/assets/invalid.png" class="icon" [hidden]="paymentForm.controls.bill.valid" alt="" />
     <br />
 
-    <label for="phone">N° Portable:</label>
+    <label for="phone">N° Portable*:</label>
     <input type="text" name="phone" formControlName="phone" [pattern]="phonePattern" />
+    <img src="/assets/valid.png" class="icon" [hidden]="!paymentForm.controls.phone.valid" alt="" />
+    <img src="/assets/invalid.png" class="icon" [hidden]="paymentForm.controls.phone.valid" alt="" />
     <br />
 
     <button type="submit" [disabled]="!paymentForm.valid">Valider</button>

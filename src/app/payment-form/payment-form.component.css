@@ -1,0 +1,26 @@
+
+
+label, input{
+    display: inline-block;
+    width: 200px;
+}
+
+input {
+    height: 30px;
+    border: 1px solid silver;
+}
+
+input.ng-invalid{
+    background-color: crimson !important;
+}
+
+input.ng-valid{
+    background-color: rgb(48, 114, 158) !important;
+}
+
+.icon{
+    /* display: inline-block; */
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 5px;
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,22 +8,35 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  private route:ActivatedRoute;
-  public num:number = -1;
+  constructor() { 
 
-  constructor(route:ActivatedRoute) { 
-    this.route = route;
   }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(
-      ( map:ParamMap ):void => {
-        const num = map.get("tartampion"); 
-        if( num != null ){
-          this.num = parseInt(num);
-        }
+    const value:number = 15; 
+    let obs:Observable<any> | null = null;
+
+        // if( value < 18 )
+        //     obs = of({isAdult: true});
+        // else
+        //     obs = of(null);
+
+      obs = new Observable(observer => {
+            if ( value < 18) {
+                observer.next({ isAdult: true });
+            } else {
+                observer.next(null);
+            }
+        });
+
+    obs.subscribe(
+      (data:any) => {
+        console.log(data);
+        
       }
-    );
+    )
+
+     
   }
 
 }

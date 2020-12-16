@@ -18,6 +18,7 @@ import { CommandCycleComponent } from './command-cycle/command-cycle.component';
 import { PaymentFormComponent } from './payment-form/payment-form.component';
 import { LoginComponent } from './login/login.component';
 import { RecapPaymentComponent } from './recap-payment/recap-payment.component';
+import { IsAdultValidator } from './IsAdultValidator';
 
 @NgModule({
   declarations: [

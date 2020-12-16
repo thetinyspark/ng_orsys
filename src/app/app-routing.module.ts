@@ -53,7 +53,7 @@ const routes: Routes = [
     component: RandomStagiaireComponent
   },
   {
-    path: "home/:tartampion", 
+    path: "home", 
     component: HomeComponent
   },
   {

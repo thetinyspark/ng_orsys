@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { crossFieldValidator } from '../CrossFieldValidator';
+import { IsAdultValidator } from '../IsAdultValidator';
 
 @Component({
   selector: 'app-payment-form',
@@ -12,22 +14,28 @@ export class PaymentFormComponent implements OnInit {
   public phonePattern:RegExp = /^(?:(?:(?:\+|00)33[ ]?(?:\(0\)[ ]?)?)|0){1}[1-9]{1}([ .-]?)(?:\d{2}\1?){3}\d{2}$/gm;
 
   constructor(private builder:FormBuilder) { 
-    this.paymentForm = this.builder.group({
+    this.paymentForm = this.builder.group(
+      {
       firstname: ["", Validators.required], 
       lastname: ["", Validators.required], 
+      age: [0, {asyncValidators: [new IsAdultValidator()]}], 
       ship: ["", Validators.required], 
       bill: ["", Validators.required], 
       phone: ["", [Validators.pattern, Validators.required]]
-    }); 
+      }, 
+      {validators: crossFieldValidator }); 
   }
 
   onSubmit(){
+
+
     if( this.paymentForm.valid === false ){
       alert("attention, votre formulaire est invalide, veuillez remplir les champs correctement !");
     }
     else{
       // on soumet notre formulaire à un webservice ou alors 
       // on stocke les infos dans un service en particulier 
+      this.paymentForm.value;
     }
     
   }
