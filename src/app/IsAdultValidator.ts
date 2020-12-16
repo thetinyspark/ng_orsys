@@ -16,21 +16,19 @@ export class IsAdultValidator implements AsyncValidator {
 
         const value:number = parseInt(control.value); 
 
-        if( value < 18 )
-            return of({isAdult: true});
-        else
-            return of(null);
+        // if( value < 18 )
+        //     return of({isAdult: true});
+        // else
+        //     return of(null);
 
-        // return new Observable(observer => {
-        //     if ( value < 18) {
-        //         console.log("error");
-                
-        //         observer.next({ isAdult: true });
-        //     } else {
-        //         console.log('ok');
-                
-        //         observer.next(null);
-        //     }
-        // });
+        return new Observable(observer => {
+            if ( value < 18) {
+                observer.next({ isAdult: true });
+            } else {
+                observer.next(null);
+            }
+
+            observer.complete();
+        });
     }
 }

@@ -14,6 +14,8 @@
 
     <label for="lastname">Age*:</label>
     <input type="text" name="age" formControlName="age" />
+    <img src="/assets/valid.png" class="icon" [hidden]="!paymentForm.controls.age.valid" alt="" />
+    <img src="/assets/invalid.png" class="icon" [hidden]="paymentForm.controls.age.valid" alt="" />
     <br />
 
     <label for="shipping_address">Adresse de Livraison*:</label>
