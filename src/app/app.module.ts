@@ -18,6 +18,11 @@ import { LoginComponent } from './login/login.component';
 import { RecapPaymentComponent } from './recap-payment/recap-payment.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { StoreModule } from '@ngrx/store';
+import { clockReducer } from './reducers/clock.reducer';
+
 
 
 @NgModule({
@@ -36,12 +41,15 @@ import { environment } from '../environments/environment';
     RecapPaymentComponent
   ],
   imports: [
+    StoreModule.forRoot({clock: clockReducer}),
+    MatSliderModule,
     BrowserModule,
     AppRoutingModule, 
     FormsModule,  
     ReactiveFormsModule,
     HttpClientModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

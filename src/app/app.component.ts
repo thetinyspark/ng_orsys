@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { updateClock } from './actions/clock.actions';
 import { Product } from './entity/product';
 
 @Component({
@@ -8,7 +11,14 @@ import { Product } from './entity/product';
 })
 export class AppComponent {
 
-  constructor() {
+  public clock:Observable<string>;
+
+  constructor(private store:Store<{clock: string}>) {
+    this.clock = this.store.select('clock');
+  }
+
+  public majClock(){
+    this.store.dispatch(updateClock());
   }
 
 }
