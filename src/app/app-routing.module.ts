@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AccountComponent } from './account/account.component';
 import { CartComponent } from './cart/cart.component';
+import { CatalogResolver } from './catalog.resolver';
 import { CatalogComponent } from './catalog/catalog.component';
 import { CommandCycleComponent } from './command-cycle/command-cycle.component';
 import { IsUserConnectedGuard } from './is-user-connected.guard';
@@ -15,7 +16,8 @@ import { ShopModule } from './shop/shop.module';
 const routes: Routes = [
   {
     path: "catalog", 
-    component: CatalogComponent
+    component: CatalogComponent, 
+    resolve: {catalogProducts: CatalogResolver}
   },       
   {
     path: "login", 
